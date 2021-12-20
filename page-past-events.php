@@ -15,8 +15,12 @@ get_header();
 <div class="container container--narrow page-section">
 <?php 
 
-  while(have_posts()) {
-    the_post(); ?>
+  $pastEvents = new WP_Query(array(
+    'post_type' => 'event'
+  ));
+
+  while($pastEvents->have_posts()) {
+    $pastEvents->the_post(); ?>
 
     <div class="event-summary">
       <a class="event-summary__date t-center" href="#">
