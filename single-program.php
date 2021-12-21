@@ -71,13 +71,12 @@
               </div>
             </div>
           <?php }
-
         } 
       ?>
     }
-  </div>
+    </div>
 
-<?php }
+  <?php }
 
   get_footer();
 ?>
