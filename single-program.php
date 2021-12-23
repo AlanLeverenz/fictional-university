@@ -24,6 +24,32 @@
       <div class="generic-content"><?php the_content(); ?></div>
 
       <?php 
+
+        $relatedProfessors = new WP_Query(array(
+          'posts_per_page' => -1,
+          'post_type' => 'professor',
+          'orderby' => 'title',
+          'order' => 'ASC',
+          'meta_query' => array(
+            array(
+              'key' => 'related_programs',
+              'compare' => 'LIKE',
+              'value' => '"' . get_the_ID() . '"'
+            )
+          )
+        ));
+
+        if ($relatedProfessors->have_posts()) {
+
+          echo '<hr class="section-break">';
+          echo '<h2 class="headline headline--medium">Upcoming ' . get_the_title() . ' Events</h2>';
+
+          while($relatedProfessors->have_posts()) {
+            $relatedProfessors->the_post(); ?>
+            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></li>
+          <?php }
+        }
+
         $today = date('Ymd');
         $homepageEvents = new WP_Query(array(
           'posts_per_page' => 2,
@@ -73,7 +99,6 @@
           <?php }
         } 
       ?>
-    }
     </div>
 
   <?php }
