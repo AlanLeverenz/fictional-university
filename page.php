@@ -5,10 +5,6 @@ get_header();
   while(have_posts()) {
     the_post(); 
     pageBanner();
-    // pageBanner(array(
-    //   'title' => 'Hello there this is the title',
-    //   'photo' => 'https://cdn.britannica.com/02/119602-050-09EB2FC4/El-Capitan-Yosemite-National-Park-California.jpg'
-    // ));
     ?>
 
     <div class="container container--narrow page-section">

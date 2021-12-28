@@ -3,7 +3,7 @@
 
   while(have_posts()) {
     the_post(); 
-    pageBanner(); // function from funtions.php file
+    pageBanner(); 
     ?>
 
 
