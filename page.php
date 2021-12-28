@@ -3,17 +3,13 @@
 get_header();
 
   while(have_posts()) {
-    the_post(); ?>
-
-    <div class="page-banner">
-      <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-      <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"><?php the_title(); ?></h1>
-        <div class="page-banner__intro">
-          <p>DON'T FORGET TO REPLACE ME LATER</p>
-        </div>
-      </div>
-    </div>
+    the_post(); 
+    pageBanner();
+    // pageBanner(array(
+    //   'title' => 'Hello there this is the title',
+    //   'photo' => 'https://cdn.britannica.com/02/119602-050-09EB2FC4/El-Capitan-Yosemite-National-Park-California.jpg'
+    // ));
+    ?>
 
     <div class="container container--narrow page-section">
 
