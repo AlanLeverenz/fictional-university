@@ -73,13 +73,13 @@ function initMarker($marker, map) {
 * centerMap
 *
 * Centers the map showing all markers in view.
-*
-* @date    22/10/19
-* @since   5.8.6
-*
-* @param   object The map instance.
-* @return  void
 */
+// @date    22/10/19
+// @since   5.8.6
+
+// @param   object The map instance.
+// @return  void
+
 function centerMap(map) {
 
   // Create map boundaries from all map markers.
@@ -100,5 +100,14 @@ function centerMap(map) {
     map.fitBounds(bounds);
   }
 }
+
+// Render maps on page load.
+$(document).ready(function () {
+  $('.acf-map').each(function () {
+    var map = initMap($(this));
+  });
+});
+
+// })(jQuery);
 
 export default initMap
