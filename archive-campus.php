@@ -8,7 +8,7 @@ pageBanner(array(
 
 <div class="container container--narrow page-section">
 
-<div class="acf-map"></div>
+<div class="acf-map">
 
 <?php 
   while(have_posts()) {
@@ -20,7 +20,7 @@ pageBanner(array(
 echo paginate_links();
 ?>
 </div>
-
+</div>
 </div>
 
 <?php 

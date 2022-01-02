@@ -1,3 +1,4 @@
+
 function initMap($el) {
 
   // Find marker elements within map.
@@ -24,17 +25,17 @@ function initMap($el) {
 }
 
 /**
-* initMarker
-*
-* Creates a marker for the given jQuery element and map.
-*
-* @date    22/10/19
-* @since   5.8.6
-*
-* @param   jQuery $el The jQuery element.
-* @param   object The map instance.
-* @return  object The marker instance.
-*/
+ * initMarker
+ *
+ * Creates a marker for the given jQuery element and map.
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   jQuery $el The jQuery element.
+ * @param   object The map instance.
+ * @return  object The marker instance.
+ */
 function initMarker($marker, map) {
 
   // Get position from marker.
@@ -70,16 +71,16 @@ function initMarker($marker, map) {
 }
 
 /**
-* centerMap
-*
-* Centers the map showing all markers in view.
-*/
-// @date    22/10/19
-// @since   5.8.6
-
-// @param   object The map instance.
-// @return  void
-
+ * centerMap
+ *
+ * Centers the map showing all markers in view.
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   object The map instance.
+ * @return  void
+ */
 function centerMap(map) {
 
   // Create map boundaries from all map markers.
@@ -107,7 +108,3 @@ $(document).ready(function () {
     var map = initMap($(this));
   });
 });
-
-// })(jQuery);
-
-export default initMap

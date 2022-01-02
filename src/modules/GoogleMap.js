@@ -9,7 +9,7 @@ class GMap {
     var $markers = $el.querySelectorAll(".marker")
 
     var args = {
-      zoom: 16,
+      zoom: 8,
       center: new google.maps.LatLng(0, 0),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
