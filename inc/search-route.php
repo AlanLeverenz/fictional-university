@@ -2,7 +2,7 @@
 
 add_action('rest_api_init', 'universityRegisterSearch');
 
-fnction universityRegisterSearch() {
+function universityRegisterSearch() {
   // namespace, route, array with methods, callback function
   // WP_REST_SERVER::READABLE
   register_rest_route('university/v1', 'search', array(
@@ -12,7 +12,11 @@ fnction universityRegisterSearch() {
 }
 
 function universitySearchResults() {
-  return 'Congratulations, you created a route.';
+  $professors = new WP_QUERY(array(
+    'post_type' => 'professor'
+  ));
+
+  return $professors->posts;
+
 }
 
-?>
