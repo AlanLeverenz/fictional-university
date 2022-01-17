@@ -46,7 +46,8 @@ function universitySearchResults($data) {
     if (get_post_type() == 'program') {
       array_push($results['programs'], array(
         'title' => get_the_title(),
-        'permalink' => get_the_permalink()
+        'permalink' => get_the_permalink(),
+        'id' => get_the_id()
       ));
     }
 
@@ -83,7 +84,7 @@ function universitySearchResults($data) {
       array(
         'key' => 'related_programs',
         'compare' => 'LIKE',
-        'value' => '"64"'
+        'value' => '"' . $results['programs'][0]['id'] . '"'
     ))
   ));
 
@@ -100,7 +101,7 @@ function universitySearchResults($data) {
 
   }
 
-  $results['professors'] =  array_values(array_unique($results['professors'], SORT_REGULAR));
+  $results['professors'] =  array_values(array_unique($results['professors'], SORT_REGULAR)); // removes duplicate results, and array indices
 
   return $results;
 
