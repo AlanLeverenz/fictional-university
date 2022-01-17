@@ -97,8 +97,10 @@ function universitySearchResults($data) {
         'image' => get_the_post_thumbnail_url(0, 'professorLandscape')
       ));
     }
-    
+
   }
+
+  $results['professors'] =  array_values(array_unique($results['professors'], SORT_REGULAR));
 
   return $results;
 
