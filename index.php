@@ -2,7 +2,7 @@
 get_header(); 
 pageBanner(array(
   'title' => 'Welcome to our blog!',
-  'subtitle' => 'Keep with our latest news'
+  'subtitle' => 'Keep up with our latest news'
 ));
 ?>
 
