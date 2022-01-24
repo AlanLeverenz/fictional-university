@@ -145,3 +145,9 @@ function ourLoginCSS() {
   wp_enqueue_style('university_main_styles',get_theme_file_uri('/build/style-index.css'));
   wp_enqueue_style('university_extra_styles',get_theme_file_uri('/build/index.css'));
 }
+
+add_filter('login_headertitle', 'ourLoginTitle');
+
+function ourLoginTitle() {
+  return get_bloginfo('name');
+}
