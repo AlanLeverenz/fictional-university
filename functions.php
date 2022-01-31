@@ -9,6 +9,13 @@ function university_custom_rest() {
       return get_the_author();
     }
   ));
+
+  register_rest_field('note', 'userNoteCount', array(  
+    //field type, field name, array function that creates field name value
+    'get_callback' => function() {
+      return count_user_posts(get_current_user_id(), 'note');
+    }
+  ));
 }
 
 add_action('rest_api_init', 'university_custom_rest');
