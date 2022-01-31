@@ -19,6 +19,7 @@ get_header();
         <input class="new-note-title" placeholder="Title">
         <textarea class="new-note-body" placeholder="Your note here..."></textarea>
         <span class="submit-note">Create Note</span>
+        <span class="note-limit-message">Note limit reached: Delete an existing note to make room for a new one.</span>
       </div>
 
 
