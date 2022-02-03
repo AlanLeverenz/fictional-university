@@ -1,38 +1,50 @@
-import $ from 'jquery';
+import $ from "jquery"
 
 class Like {
-
-  // constructor
   constructor() {
-    this.events();
+    this.events()
   }
 
-
-  // events
   events() {
-    $('.like-box').on("click", this.ourClickDispatcher.bind(this));
+    $(".like-box").on("click", this.ourClickDispatcher.bind(this))
   }
 
   // methods
   ourClickDispatcher(e) {
-    var currentLikeBox = $(e.target).closest("like-box");
-    //gets nearest parent with "like-box" selector
+    var currentLikeBox = $(e.target).closest(".like-box")
 
-    if (currentLikeBox.data('exists') == 'yes') {
-      this.deleteLike();
+    if (currentLikeBox.data("exists") == "yes") {
+      this.deleteLike()
     } else {
-      this.createLike();
+      this.createLike()
     }
-
   }
 
   createLike() {
-    alert("create test message");
+    $.ajax({
+      url: universityData.root_url + "/wp-json/university/v1/manageLike",
+      type: "POST",
+      success: response => {
+        console.log(response)
+      },
+      error: response => {
+        console.log(response)
+      }
+    })
   }
 
   deleteLike() {
-    alert("delete test message");
+    $.ajax({
+      url: universityData.root_url + "/wp-json/university/v1/manageLike",
+      type: "DELETE",
+      success: response => {
+        console.log(response)
+      },
+      error: response => {
+        console.log(response)
+      }
+    })
   }
 }
 
-export default Like;
+export default Like
