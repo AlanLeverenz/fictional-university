@@ -11,7 +11,8 @@ class Like {
 
   // methods
   ourClickDispatcher(e) {
-    var currentLikeBox = $(e.target).closest(".like-box")
+    var currentLikeBox = $(e.target).closest(".like-box");
+    // click targets closest like-box parent tag
 
     if (currentLikeBox.data("exists") == "yes") {
       this.deleteLike(currentLikeBox)
@@ -22,6 +23,9 @@ class Like {
 
   createLike(currentLikeBox) {
     $.ajax({
+      beforeSend: (xhr) => {
+        xhr.setRequestHeader('X-WP-Nonce', universityData.nonce);
+      },
       url: universityData.root_url + "/wp-json/university/v1/manageLike",
       type: 'POST',
       data: { 'professorId': currentLikeBox.data('professor') },
